@@ -1,6 +1,7 @@
 Author : Nitish verma
 
-  This is a clone of OYO rooms website. Contains only the struture of the website i.e HTML file only.
+  This is a clone of OYO rooms website. Contains only the struture of the website and design i.e HTML along with CSS. 
+  Used google fonts using google apis.
 
   It is divided into 4 Sections :-
 
@@ -12,10 +13,12 @@ Author : Nitish verma
 Technologies Used :-
 
 1. HTML language
-2. fontawesome (icons of social media)
+2. Fontawesome (icons of social media)
+3. Bootstrap 5.0
+4. Google Fonts
 
 
-Version : 1.0.10
+Version : 1.1.10
 
 
 
