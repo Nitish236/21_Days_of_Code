@@ -45,8 +45,6 @@ app.post("/", (req,res) => {
         });
       }
       else{
-            console.log("Error : 404 , City not found");
-
             res.render("error", { Error: response.statusCode, Message: "City not found" });
         } 
       
