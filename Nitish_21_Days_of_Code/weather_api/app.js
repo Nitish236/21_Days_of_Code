@@ -12,29 +12,44 @@ app.use(express.static("public"));
 
 app.get("/", (req,res) => {
      
-    res.render("data", { cityName: "City", Temperature: "17.1", Description: "fog", Image: });
+    res.render("data", { cityName: "City name", Temperature: "17.1", Description: "fog", Pressure: "900", Humidity: "50", seaLevel: "800", Image: "images/sample.png"});
 });
 
 app.post("/", (req,res) => {
    
-    const city = req.body.cityName ;
+    var cname = req.body.cityName ;
+    const city = cname.charAt(0).toUpperCase() + cname.slice(1) ;
     const apikey = "c1a60aefecb1efe6a3ffec64138f8257";
     const unit = "metric";
     const url = "https://api.openweathermap.org/data/2.5/weather?q=" + city +"&units="+ unit + "&appid=" + apikey ;
     https.get(url, (response) => {
       console.log(response.statusCode);
 
-      response.on("data", (data) => {
-          const weather_data = JSON.parse(data) ;
+      if( response.statusCode === 200)
+      {
+        response.on("data", (data) => {
+            const weather_data = JSON.parse(data) ;
+  
+            const temp = weather_data.main.temp ;
+            const description = weather_data.weather[0].description ;
+            const pressure = weather_data.main.pressure ;
+            const humidity = weather_data.main.humidity ;
+            const sealevel = weather_data.main.sea_level ;
+  
+            const icon = weather_data.weather[0].icon;
+            const imageURL = "http://openweathermap.org/img/wn/"+ icon +"@2x.png" ;
+  
+            
+            res.render("data", { cityName: city, Temperature: temp, Description: description, Pressure: pressure, Humidity: humidity, seaLevel: sealevel, Image: imageURL })
+        
+        });
+      }
+      else{
+            console.log("Error : 404 , City not found");
 
-          const temp = weather_data.main.temp ;
-          const description = weather_data.weather[0].description ;
-          const icon = weather_data.weather[0].icon;
-          const imageURL = "http://openweathermap.org/img/wn/"+ icon +"@2x.png" ;
-
-          
-          res.render("data", { cityName: city, Temperature: temp, Description: description })
-      });
+            res.render("error", { Error: response.statusCode, Message: "City not found" });
+        } 
+      
     });
 });
 
