@@ -1,6 +1,10 @@
 
-body{
-  overflow-x: hidden;
+html,body{
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+    overflow-x: hidden; 
 }
 
 
@@ -44,6 +48,7 @@ body{
   padding-top: 6px;
   padding-right: 100px;
   padding-bottom: 0;
+  font-weight: 500;
 }
 
 .City{
@@ -91,7 +96,7 @@ body{
                                 
 
 .images{
-  padding: 40px 60px 0 60px;
+  margin: 40px 60px;
 }
 .image_2{
   border-radius: 2%;
@@ -100,13 +105,11 @@ body{
                                  /*   Container - 2      */
 
 .container_2{
-  background-color: #f0f0f5;
-  position: relative;
-  top: 90px;
+  background-color: #f0f0f5; 
 }
 
 .image_3{
-  padding: 40px 40px;
+  padding: 40px 40px 0 40px;
   height: 70%;
   width: 100%;
 }
@@ -126,7 +129,7 @@ body{
 }
 .India{
   width:120%; height:95%;
-  right: 90px; bottom: 215px;
+  right: 100px; bottom: 235px;
 }
 .Malaysia{
   width:115%; height:55%;
@@ -139,7 +142,7 @@ body{
 
 .oyo_col{
   font-family: Open Sans,sans-serif;
-  padding: 80px 50px;
+  margin : 50px;
 }
 
 h3{
@@ -213,9 +216,9 @@ small{
 .vertical_line_1{
   border-top: 1px solid white;
   transform: rotate(90deg);
-  width: 150px; height: 0;
+  width: 170px; height: 0;
   position: absolute;
-  left: 38.5%; top: 22%;
+  left: 38.5%; top: 26%;
 }
 .column_set_1{
   text-align: left;
@@ -227,9 +230,9 @@ small{
 .vertical_line_2{
   border-top: 1px solid white;
   transform: rotate(90deg);
-  width: 150px; height: 0;
+  width: 170px; height: 0;
   position: absolute;
-  left: 68%; top: 22%;
+  left: 68%; top: 26%;
 }
 
 .column_set_2{
@@ -241,34 +244,19 @@ small{
   position: relative; left: 70px;
 }
 
+
                       /*  Footer - 4   */
 
 .footer_4{
-  padding: 20px 30px;
-}
-.footer_4_heading{
-  text-align: center;
-  font-size: 18px;
-  font-family: Open Sans,sans-serif;
-}
-.footer_4_content{
-  text-align: center;  font-size: 15px;
-  padding: 6px 0 5px 0;
-  font-family: Open Sans,sans-serif;
-}
-
-                      /*  Footer - 5   */
-
-.footer_5{
   padding: 20px 50px 40px 50px;;
 }
-.footer_5_heading{
+.footer_4_heading{
  padding: 0 0 8px 35px;
 }
-.footer_5_content{
+.footer_4_content{
   padding: 8px 0 8px 25px;
 }
-.footer_line_2{
+.footer_line_1{
   margin: 20px 0 30px 0;
   width: 95%;
   position: relative; left: 35px;
